@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+  <script>
+  // Lokale Daten
+  const stadtteile = ["Urfahr", "Innere Stadt", "Bindermichel"];
+  const liste = document.getElementById("liste-linz");
+  stadtteile.forEach(s => {
+    let li = document.createElement("li");
+    li.textContent = s;
+    liste.appendChild(li);
+  });
+</script>
+</head>
+<body>
+<h1>Dynamische-Datenseite</h1>
+  <ul ID="liste-inz"></ul>
+
+</body>

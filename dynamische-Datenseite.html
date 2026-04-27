@@ -2,7 +2,6 @@
 <head>
     <meta charset="UTF-8">
   <script>
-  // Lokale Daten
   const stadtteile = ["Urfahr", "Innere Stadt", "Bindermichel"];
   const liste = document.getElementById("liste-linz");
   stadtteile.forEach(s => {
@@ -10,10 +9,24 @@
     li.textContent = s;
     liste.appendChild(li);
   });
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(data => {
+      const sListe = document.getElementById("service-liste");
+      data.forEach(user => {
+        let li = document.createElement("li");
+        li.textContent = "User: " + user.name;
+        sListe.appendChild(li);
+      });
+    });
 </script>
 </head>
 <body>
 <h1>Dynamische-Datenseite</h1>
   <ul ID="liste-inz"></ul>
-
+    <li>
+    Mein Name: Mathilde
+    Name meiner Mutter: Karoline
+    </li>
+  <ul ID="service-inz"></ul>
 </body>

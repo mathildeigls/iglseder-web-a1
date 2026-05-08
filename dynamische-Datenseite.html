@@ -2,8 +2,11 @@
 <head>
     <meta charset="UTF-8">
   <script>
-  const stadtteile = ["Urfahr", "Innere Stadt", "Bindermichel"];
+  const stadtteile = [
+      "Urfahr", "Innere Stadt", "Bindermichel" ,"Mathilde" , "Karoline" 
+  ];
   const liste = document.getElementById("liste-linz");
+      
   stadtteile.forEach(s => {
     let li = document.createElement("li");
     li.textContent = s;
@@ -13,6 +16,7 @@
     .then(response => response.json())
     .then(data => {
       const sListe = document.getElementById("service-liste");
+        
       data.forEach(user => {
         let li = document.createElement("li");
         li.textContent = "User: " + user.name;
@@ -24,9 +28,6 @@
 <body>
 <h1>Dynamische-Datenseite</h1>
   <ul ID="liste-inz"></ul>
-    <li>
-    Mein Name: Mathilde
-    Name meiner Mutter: Karoline
-    </li>
+
   <ul ID="service-inz"></ul>
 </body>
